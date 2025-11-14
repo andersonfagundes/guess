@@ -13,13 +13,15 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-input, button {
+input,
+button {
   font-family: 'Noto Sans', sans-serif;
 }
 
 button {
   cursor: pointer;
   transition: filter 0.2s;
+  border-radius: 0.43rem;
 }
 
 button:hover {
