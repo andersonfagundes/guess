@@ -4,7 +4,7 @@ import { Input } from './components/Input';
 import { Letter } from './components/Letter';
 import { Tip } from './components/Tip';
 import { Button } from './components/Button';
-import { LettersUsed } from './components/LettersUsed';
+import { LettersUsed, type LetterUsedProps } from './components/LettersUsed';
 import { useEffect, useState } from 'react';
 import { WORDS } from './utilis/words';
 import type { Challenge } from './utilis/words';
@@ -13,6 +13,7 @@ export default function App() {
   const [attempts, setAttempts] = useState(0);
   const [letter, setLetter] = useState('');
   const [challenge, setChallenge] = useState<Challenge | null>(null);
+  const [letterUsed, setLetterUsed] = useState<LetterUsedProps[]>([]);
 
   function handleRestartGame() {
     alert('Restart game');
@@ -49,7 +50,7 @@ export default function App() {
           <Input autoFocus maxLength={1} placeholder="?" />
           <Button title="Confirm" />
         </div>
-        <LettersUsed />
+        <LettersUsed data={letterUsed} />
       </main>
     </div>
   );
